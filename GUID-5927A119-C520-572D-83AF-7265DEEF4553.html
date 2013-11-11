@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="copyright" content="(C) Copyright 2010" />
+  <meta name="DC.rights.owner" content="(C) Copyright 2010" />
+  <meta name="DC.Type" content="task" />
+  <meta name="DC.Title" content="Using Pre-Shared Keys with Transport Layer Security : Tutorial" />
+  <meta name="abstract" content="This topic describes how to use Pre-Shared Keys (PSKs) with Transport Layer Security (TLS). This tutorial is useful for licensees and third-party developers." />
+  <meta name="description" content="This topic describes how to use Pre-Shared Keys (PSKs) with Transport Layer Security (TLS). This tutorial is useful for licensees and third-party developers." />
+  <meta name="DC.Relation" scheme="URI" content="GUID-D430A6E4-003C-5368-893B-D7FCD5ADCAAD.html" />
+  <meta name="DC.Relation" scheme="URI" content="index.html" />
+  <meta name="DC.Relation" scheme="URI" content="GUID-32E29020-1956-461A-B79A-1492E06049E7.html" />
+  <meta name="DC.Relation" scheme="URI" content="GUID-B144EAB9-53AB-579B-9E12-B16518E4FC01.html" />
+  <meta name="DC.Relation" scheme="URI" content="GUID-198A417F-EA4D-58A0-A928-A78FCE1BB772.html" />
+  <meta name="DC.Relation" scheme="URI" content="GUID-3D20F136-4526-502D-A708-1F26550FC61A.html" />
+  <meta name="DC.Relation" scheme="URI" content="GUID-D430A6E4-003C-5368-893B-D7FCD5ADCAAD.html" />
+  <meta name="DC.Format" content="XHTML" />
+  <meta name="DC.Identifier" content="GUID-5927A119-C520-572D-83AF-7265DEEF4553" />
+  <meta name="DC.Language" content="en" />
+  <link rel="stylesheet" type="text/css" href="commonltr.css" />
+  <title>
+   Using Pre-Shared Keys with Transport Layer Security : Tutorial
+  </title>
+  <link type="text/css" rel="stylesheet" href="css/common.css" media="screen"/>
+<link type="text/css" rel="stylesheet" href="css/sdl.css" media="screen"/>
+
+<!--[if IE]>
+<link href="css/iefix.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+  <link rel="stylesheet" type="text/css" href="nokiacxxref.css" />
+ </head>
+ <body id="GUID-5927A119-C520-572D-83AF-7265DEEF4553">
+  <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553">
+   <!-- -->
+  </a>
+  <?php include_once (CURRENT_SKIN_PATH.'/sdl_header.html'); ?>
+  <div id="sdl_container">
+   <div id="leftMenu">
+    <div id="expandcontractdiv">
+     <a id="collapseTree" href="javascript:tree.collapseAll()">
+      Collapse all
+     </a>
+     <a id="index" href="index.html">
+      Symbian^3 Application Developer Library
+     </a>
+    </div>
+    <iframe style="border:none" height="800" width="300" src="index-toc.html"></iframe>
+<div id="treeDiv1">
+     &#160;
+    </div>
+    <script type="text/javascript">
+     var currentIconMode = 0; window.name="id2470542 id2387036 id2387176 id2387185 id2387216 ";
+	YAHOO.util.Event.onDOMReady(buildTree, this,true);
+    </script>
+   </div>
+   <div id="sdl_content">
+<div class="breadcrumb">
+     <a href="index.html" title="Symbian^3 Application Developer Library">
+      Symbian^3 Application Developer Library
+     </a>
+     &gt;
+     <a href="GUID-32E29020-1956-461A-B79A-1492E06049E7.html" title="The Symbian Guide describes the architecture and functionality of the platform, and provides guides on using its APIs.">
+      Symbian Guide
+     </a>
+     &gt;
+     <a href="GUID-B144EAB9-53AB-579B-9E12-B16518E4FC01.html" title="Networking Services provides a standard framework for accessing network services and actual implementations of network protocols. The components of the Networking Services are closely related to the framework provided by the Communications Framework module.">
+      Networking Services Guide
+     </a>
+     &gt;
+     <a href="GUID-198A417F-EA4D-58A0-A928-A78FCE1BB772.html" title="Network Security is the set of components that provide security protocols for an IP connection.">
+      Network Security
+     </a>
+     &gt;
+     <a href="GUID-3D20F136-4526-502D-A708-1F26550FC61A.html" title="The Secure Sockets allow a user to transport data over the network by enabling the users to authenticate and encrypt the data.">
+      Secure Sockets
+     </a>
+     &gt;
+     <a href="GUID-D430A6E4-003C-5368-893B-D7FCD5ADCAAD.html" title="This section describes how to use Secure Sockets.">
+      Tutorials
+     </a>
+     &gt;
+    </div>
+    <h1 class="topictitle1">
+     Using
+Pre-Shared Keys with Transport Layer Security : Tutorial
+    </h1>
+    <div>
+     <p>
+      This topic describes how to use Pre-Shared Keys (PSKs) with Transport
+Layer Security (TLS). This tutorial is useful for licensees and third-party
+developers.
+     </p>
+     <div class="section">
+      <p>
+       TLS_PSK is a standard for using PSKs with Transport Layer Security
+(TLS). You can use TLS_PSK instead of certificate authentication. The benefits
+of using TLS_PSK are as follows:
+      </p>
+      <ul>
+       <li id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-F752EC0E-19B2-5C8E-9F0F-AC1131CC9437">
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-F752EC0E-19B2-5C8E-9F0F-AC1131CC9437">
+         <!-- -->
+        </a>
+        <p>
+         Easy to manage - For
+example, PSK can derive from a "secret key" that vendors deploy in the SIM
+card of each phone.
+        </p>
+       </li>
+       <li id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-9964A601-5724-58D0-856C-B2401AD171D3">
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-9964A601-5724-58D0-856C-B2401AD171D3">
+         <!-- -->
+        </a>
+        <p>
+         It improves the connection
+setup performance and battery life, as the key exchange algorithm takes less
+time to run.
+        </p>
+       </li>
+      </ul>
+      <p>
+       Symbian maintains the following TLS_PSK ciphersuites:
+      </p>
+      <ul>
+       <li id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-AF102861-2863-5189-AEA0-738797280D3A">
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-AF102861-2863-5189-AEA0-738797280D3A">
+         <!-- -->
+        </a>
+        <p>
+         TLS_PSK_WITH_RC4_128_SHA
+        </p>
+       </li>
+       <li id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-D305CBF6-87F1-5895-AFE6-F8067340E489">
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-D305CBF6-87F1-5895-AFE6-F8067340E489">
+         <!-- -->
+        </a>
+        <p>
+         TLS_PSK_WITH_3DES_EDE_CBC_SHA
+        </p>
+       </li>
+       <li id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-EA4EC83B-5B58-53D6-A1AD-D408CBBC25BA">
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-EA4EC83B-5B58-53D6-A1AD-D408CBBC25BA">
+         <!-- -->
+        </a>
+        <p>
+         TLS_PSK_WITH_AES_128_CBC_SHA
+        </p>
+       </li>
+       <li id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-4B4E0A69-8F73-5D41-AE50-A231F2E73A00">
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-4B4E0A69-8F73-5D41-AE50-A231F2E73A00">
+         <!-- -->
+        </a>
+        <p>
+         TLS_PSK_WITH_AES_256_CBC_SHA
+        </p>
+       </li>
+      </ul>
+      <p>
+       The ciphersuite is made up of a key exchange (for example PSK), a
+cipher (for example RC4_128) and a hash (for example SHA).
+      </p>
+      <p>
+       Note: TLS_PSK
+operation is specified by
+       <a href="http://www.ietf.org/rfc/rfc4279.txt" target="_blank">
+        RFC4279
+       </a>
+       .
+      </p>
+      <p>
+       For a client to make a secure connection
+with a TLS_PSK server, it must provide a pre-shared key and an identity. To
+provide a pre-shared key and an identity, do the following steps:
+      </p>
+     </div>
+     <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-460D5C5A-7C5D-552F-87B1-5E1ED199EEBD">
+      <!-- -->
+     </a>
+     <ol id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-460D5C5A-7C5D-552F-87B1-5E1ED199EEBD">
+      <li class="stepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-12A544C1-3A69-5EB5-A546-A03B95B27909">
+       <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-12A544C1-3A69-5EB5-A546-A03B95B27909">
+        <!-- -->
+       </a>
+       <span>
+        Configure a PSK
+key handler
+       </span>
+      </li>
+      <li class="stepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-6D6DADE7-457D-5885-8448-AF515B58C381">
+       <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-6D6DADE7-457D-5885-8448-AF515B58C381">
+        <!-- -->
+       </a>
+       <span>
+        <br />
+        Set available ciphersuites. There are two possibilities for offering
+PSK ciphersuites:
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-505F5F7A-60D5-55BC-9F46-8A0BDE0A8F2F">
+         <!-- -->
+        </a>
+        <ol type="a" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-505F5F7A-60D5-55BC-9F46-8A0BDE0A8F2F">
+         <li class="substepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-5B057120-5AC9-5EAA-929C-F01C9E5036AA">
+          <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-5B057120-5AC9-5EAA-929C-F01C9E5036AA">
+           <!-- -->
+          </a>
+          <span>
+           Specify an explicit
+ordered list of ciphersuites for the server to select from.
+          </span>
+          To do this call
+          SetAvailableCipherSuites()
+          . You can
+do this only after configuring the PSK key handler.
+         </li>
+         <li class="substepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-72D09EBC-0ACB-533D-B43D-CBDD7A173E95">
+          <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-72D09EBC-0ACB-533D-B43D-CBDD7A173E95">
+           <!-- -->
+          </a>
+          <span>
+           Use the default
+list, which is automatically generated.
+          </span>
+          If you do not specify an explicit list, the stack automatically includes
+the PSK ciphersuites in addition to any other ciphersuites supported.
+         </li>
+        </ol>
+        If you specify an explicit list by calling
+        SetAvailableCipherSuites()
+        ,
+and you later deconfigure the PSK key handler, you must remove the PSK ciphersuites
+from the list by calling
+        SetAvailableCipherSuites()
+        again.
+       </span>
+      </li>
+      <li class="stepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-CD1A725D-55EA-5F89-9552-C4DC629E9365">
+       <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-CD1A725D-55EA-5F89-9552-C4DC629E9365">
+        <!-- -->
+       </a>
+       <span>
+        <br />
+        Start a connection. 
+ The server chooses a ciphersuite from those offered by the client. If
+the server chooses a PSK ciphersuite, the following sequence of events occurs:
+        <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-8BA50D23-A34D-5E02-BA1C-33B9C503E83C">
+         <!-- -->
+        </a>
+        <ol type="a" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-8BA50D23-A34D-5E02-BA1C-33B9C503E83C">
+         <li class="substepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-A0F4A26A-FA91-58DC-9EFF-6F131F473E63">
+          <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-A0F4A26A-FA91-58DC-9EFF-6F131F473E63">
+           <!-- -->
+          </a>
+          <span>
+           The server can
+optionally send a “PSK identity hint” to the client.
+          </span>
+          This PSK identity hint might influence the choice of key and identity
+the client makes. If the server sends one, it is passed to the key handler.
+If it does not send one, NULL is passed to the key handler. 
+ Note: The PSK identity hint is optional and its meaning is not defined
+(format must be UTF8). Applications using TLS-PSK may left out it or use it
+for any action (for example SUPL uses it to indicate the SUPL protocol version
+and to present a list of allowed PSK generators).
+         </li>
+         <li class="substepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-30DD1846-5C91-577A-9D1F-EE535A9B4DC2">
+          <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-30DD1846-5C91-577A-9D1F-EE535A9B4DC2">
+           <!-- -->
+          </a>
+          <span>
+           The TLS stack
+on the client calls
+           ptrToKeyHandler-&gt;getPskL()
+          </span>
+          The TLS stack on the client calls getPskL() for the instance of the
+key handler (in this case ptrToKeyHandler). See
+          <a href="GUID-9580646B-FDFA-3515-B3CF-39B16880CF6F.html#GUID-9580646B-FDFA-3515-B3CF-39B16880CF6F__GUID-0EC110F3-D2A6-3FD4-8E59-9E6F5741A61C">
+           <span class="apiname">
+            MSoPskKeyHandler::
+GetPskL()
+           </span>
+          </a>
+          for the prototype. This call returns the PSK identity
+and value to be used to secure the connection.
+         </li>
+         <li class="substepexpand" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-F52F987A-E500-5579-A5D4-E26F27F7390A">
+          <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-F52F987A-E500-5579-A5D4-E26F27F7390A">
+           <!-- -->
+          </a>
+          <span>
+           The TLS stack
+sends the PSK identity to the server.
+          </span>
+          The TLS stack sends the PSK identity (chosen in Step 2) to the server
+so it can retrieve the matching PSK value to secure the connection.
+         </li>
+        </ol>
+        After the client has chosen which PSK to use, it sends an identity to
+the server and the server can use this to obtain a matching PSK. Again the
+meaning of the identity field is not specified, but its format must be UTF8.
+An application may choose to use it or leave it empty. 
+ Note: In the example, the server must select a PSK ciphersuite, because
+the client provides only PSK ciphersuites. The connection fails, if the server
+selects a PSK ciphersuite and fails to get a key that matches with the client.
+The TLS assumes that the first common ciphersuite cannot fail and does not
+implement connection retry.
+       </span>
+      </li>
+     </ol>
+     <div class="example">
+      <h2 class="sectiontitle">
+       TLS_PSK example
+      </h2>
+      <p>
+       The following example code shows
+how to configure TLS_PSK:
+      </p>
+      <pre class="codeblock" id="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-61425E22-BD86-5913-BB16-55D933556969">
+       <a name="GUID-5927A119-C520-572D-83AF-7265DEEF4553__GUID-61425E22-BD86-5913-BB16-55D933556969">
+        <!-- -->
+       </a>
+       //Configure a PSK key handler
+
+TPckgBuf&lt;MSoPskKeyHandler *&gt; pskConfigPkg;
+pskConfigPkg() = ptrToKeyHandler;
+User::LeaveIfError(secureSocket-&gt;SetOpt(KSoPskConfig, KSolInetSSL, pskConfigPkg));
+
+//set available ciphersuites 
+
+TBuf8&lt;8&gt; buf;    
+for(TInt i=0; i&lt;4; ++i)
+{
+ // The supported PSK ciphersuites are as follows:-
+ // TLS_PSK_WITH_RC4_128_SHA          = { 0x00, 0x8A };
+ // TLS_PSK_WITH_3DES_EDE_CBC_SHA     = { 0x00, 0x8B };
+ // TLS_PSK_WITH_AES_128_CBC_SHA      = { 0x00, 0x8C };
+ // TLS_PSK_WITH_AES_256_CBC_SHA      = { 0x00, 0x8D };
+ buf[i*2]=0;
+ buf[i*2+1]=0x8a+i;
+}
+secureSocket-&gt;SetAvailableCipherSuites( buf );
+
+//Start a connection
+
+secureSocket-&gt;StartClientHandshake( iStatus );
+      </pre>
+     </div>
+    </div>
+    <div>
+     <div class="familylinks">
+      <div class="parentlink">
+       <strong>
+        Parent topic:
+       </strong>
+       <a href="GUID-D430A6E4-003C-5368-893B-D7FCD5ADCAAD.html" title="This section describes how to use Secure Sockets.">
+        Tutorials
+       </a>
+      </div>
+     </div>
+    </div>
+    <p class="copyright">Copyright &#169;2010 Nokia Corporation and/or its subsidiary(-ies).<br /> All rights
+reserved. Unless otherwise stated, these materials are provided under the terms of the <a href=" http://www.eclipse.org/legal/epl-v10.html"> Eclipse Public License
+v1.0</a>.</p> 
+   </div>
+  </div>
+  <?php include_once (CURRENT_SKIN_PATH.'/sdl_footer.html'); ?>
+ </body>
+</html>
